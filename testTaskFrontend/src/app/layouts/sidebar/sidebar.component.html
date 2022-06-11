@@ -1,0 +1,54 @@
+<nav
+  style="padding-top: 80px; height: 100vh"
+  class="sidebar sidebar-dark sidebar-offcanvas"
+  id="sidebar"
+>
+  <ul class="nav">
+    <li
+      class="nav-item"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active"
+    >
+      <a class="nav-link" routerLink="/">
+        <i class="icon-grid menu-icon"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="/map1">
+        <i class="icon-layout menu-icon"></i>
+        <span class="menu-title">Local Authorities Map</span>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="/map2">
+        <i class="icon-bar-graph menu-icon"></i>
+        <span class="menu-title">Store Drive Time Map</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/customers">
+        <i class="icon-head menu-icon"></i>
+        <span class="menu-title">Customers</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/competitors">
+        <i class="icon-grid-2 menu-icon"></i>
+        <span class="menu-title">Competitors</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/documentation">
+        <i class="icon-paper menu-icon"></i>
+        <span class="menu-title">Documentation</span>
+      </a>
+    </li>
+    <li class="nav-item cursor-pointer">
+      <a class="nav-link" routerLink="" (click)="onsignOut()">
+        <i class="ti-power-off menu-icon"></i>
+        <span class="menu-title">Logout</span>
+      </a>
+    </li>
+  </ul>
+</nav>

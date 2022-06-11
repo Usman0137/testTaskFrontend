@@ -1,0 +1,90 @@
+<div class="login-page">
+  <img src="/assets/images/login-bg.png " class="logoimg" />
+  <div
+    class="centered d-flex flex-column justify-content-center align-item-center"
+  >
+    <div class="brand-logo">
+      <img src="/assets/green-wren-logo.svg" alt="logo" />
+    </div>
+    <span class="login-subtittle fw-semiBold">Please Login!</span>
+    <form [formGroup]="loginForm" (ngSubmit)="formSubmit()" class="pt-3 w-100">
+      <div class="mb-20">
+        <input
+          type="email"
+          class="login-field"
+          formControlName="email"
+          placeholder="Email"
+        />
+        <div
+          class="error fw-medium"
+          *ngIf="
+            !loginForm.get('email').valid && loginForm.get('email').touched
+          "
+        >
+          <svg
+            class="mr-6"
+            xmlns="http://www.w3.org/2000/svg"
+            width="14.727"
+            height="14.727"
+            viewBox="0 0 14.727 14.727"
+          >
+            <path
+              id="Icon_material-error"
+              data-name="Icon material-error"
+              d="M10.363,3a7.363,7.363,0,1,0,7.363,7.363A7.366,7.366,0,0,0,10.363,3ZM11.1,14.045H9.627V12.572H11.1Zm0-2.945H9.627V6.682H11.1Z"
+              transform="translate(-3 -3)"
+              fill="#f04a4a"
+            />
+          </svg>
+          Email is not valid
+        </div>
+      </div>
+      <div class="mb-20">
+        <input
+          type="password"
+          class="login-field"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <div
+          class="error fw-medium"
+          *ngIf="
+            !loginForm.get('password').valid &&
+            loginForm.get('password').touched
+          "
+        >
+          <svg
+            class="mr-6"
+            xmlns="http://www.w3.org/2000/svg"
+            width="14.727"
+            height="14.727"
+            viewBox="0 0 14.727 14.727"
+          >
+            <path
+              id="Icon_material-error"
+              data-name="Icon material-error"
+              d="M10.363,3a7.363,7.363,0,1,0,7.363,7.363A7.366,7.366,0,0,0,10.363,3ZM11.1,14.045H9.627V12.572H11.1Zm0-2.945H9.627V6.682H11.1Z"
+              transform="translate(-3 -3)"
+              fill="#f04a4a"
+            />
+          </svg>
+          Password must be greater then 8 character
+        </div>
+      </div>
+      <div class="mt-70">
+        <button class="login-btn fw-medium" type="submit">SIGN IN</button>
+        <div *ngIf="error" class="error fw-medium" role="alert">
+          {{ error }}
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

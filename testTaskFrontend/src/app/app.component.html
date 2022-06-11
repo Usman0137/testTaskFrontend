@@ -1,0 +1,12 @@
+<div class="container-scroller">
+  <app-header *ngIf="router.url !== '/login'"></app-header>
+  <div class="container-fluid page-body-wrapper">
+    <app-sidebar *ngIf="router.url !== '/login'"></app-sidebar>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <!-- <app-footer></app-footer> -->
+</div>
